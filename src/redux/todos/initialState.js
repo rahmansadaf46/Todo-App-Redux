@@ -1,12 +1,13 @@
-export const initialState =[
+const initialState = [
     {
-        id:1,
-        text:"hello",
+        id: 1,
+        text: "hello",
         completed: true
-    },{
-        id:2,
-        text:"hello2",
+    }, {
+        id: 2,
+        text: "hello2",
         completed: false,
-        color:"red"
+        color: "red"
     },
 ]
+export default initialState;

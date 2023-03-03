@@ -1,4 +1,5 @@
-import { initialState } from "./initialState";
+
+import initialState from "./initialState";
 import { ADDED, ALLCOMPLETED, TOGGLED, COLORSELECTED, DELETED, CLEARCOMPLETED } from "./actionTypes";
 
 const nextTodoId = (todos) => {
@@ -51,7 +52,7 @@ const reducer = (state = initialState, action) => {
         case CLEARCOMPLETED:
             return state.filter(todo => !todo.completed);
         default:
-            break;
+            return state;
     }
 
 };
