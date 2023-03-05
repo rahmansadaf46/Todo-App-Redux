@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { colorChanged, statusChanged } from "../redux/filters/actions";
 
+
 export default function Footer() {
     const dispatch = useDispatch()
     const todos = useSelector((state) => state.todos)
     const filters = useSelector((state) => state.filters)
-    let task = todos.filter(todo => !todo.completed).length;
+    let todosRemaining = todos.filter(todo => !todo.completed).length;
    
     const handleStatus = (status) => {
         dispatch(statusChanged(status))
@@ -20,7 +21,7 @@ export default function Footer() {
     }
     return (
         <div className="mt-4 flex justify-between text-xs text-gray-500">
-            <p>{task} tasks left</p>
+            <p>{todosRemaining} tasks left</p>
             <ul className="flex space-x-1 items-center text-xs">
                 <li onClick={() => handleStatus('All')} className={`cursor-pointer ${filters.status === 'All' && 'font-bold'}`}>All</li>
                 <li>|</li>
